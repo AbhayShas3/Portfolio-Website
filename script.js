@@ -46,8 +46,8 @@ const animateCircles = (e, x, y) => {
 };
 //End of Animated Circles
 document.body.addEventListener('mousemove', (e) => {
-    let x = e.clientX
-    let y = e.clientY
+    let x = e.clientX;
+    let y = e.clientY;
 
     mouseCirclefn(x, y);
     animateCircles(e, x, y);
@@ -57,3 +57,25 @@ document.body.addEventListener('mouseleave', () => {
     mouseCircle.style.opacity = '0';
     mouseDot.style.opacity = '0';
 })
+
+//Mai Button
+const mainBtn = document.querySelector(".main-btn")
+let ripple;
+mainBtn.addEventListener("mouseenter", (e) => {
+    const left = e.clientX - e.target.getBoundingClientRect().left;
+    console.log(left);
+    const top = e.clientY - e.target.getBoundingClientRect().top;
+    console.log(top);
+
+    ripple = document.createElement("div")
+    ripple.classList.add("ripple");
+    ripple.style.left = `${left}px`
+    ripple.style.top = `${top}px`
+    mainBtn.prepend(ripple);
+
+})
+
+mainBtn.addEventListener("mouseleave", () => {
+    mainBtn.removeChild(ripple);
+})
+//End of Main Button
