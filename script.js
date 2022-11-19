@@ -46,8 +46,8 @@ const animateCircles = (e, x, y) => {
 };
 //End of Animated Circles
 document.body.addEventListener('mousemove', (e) => {
-    let x = e.clientX
-    let y = e.clientY
+    let x = e.clientX;
+    let y = e.clientY;
 
     mouseCirclefn(x, y);
     animateCircles(e, x, y);
