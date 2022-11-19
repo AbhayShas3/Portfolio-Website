@@ -31,6 +31,7 @@ html {
     z-index: 300;
     transform: translate(-50%, -50%);
     opacity: 0;
+    pointer-events: none;
 }
 
 .mouse-circle {
@@ -133,11 +134,25 @@ html {
     opacity: 0.5;
 }
 
+.circle {
+    width: 22rem;
+    height: 22rem;
+    border-radius: 50%;
+    align-self: center;
+    justify-self: center;
+    opacity: 0.5;
+    position: relative;
+    top: 0;
+    left: 0;
+    transition: left 2s, top 2s;
+}
+
 .circle-1 {
     background: url(Images/99f01feb0a5b9ed2646f0e80ebedba9e.jpg) center no-repeat;
     background-size: cover;
     background-clip: content-box;
     border: .5rem dotted rgb(88, 88, 44);
+    margin-left: -10rem;
 
 }
 
@@ -146,7 +161,7 @@ html {
     background-size: cover;
     background-clip: content-box;
     border: .5rem dotted rgb(88, 88, 44);
-
+    margin-right: -10rem
 }
 
 .circle-3 {
@@ -154,6 +169,7 @@ html {
     background-size: cover;
     background-clip: content-box;
     border: .5rem dotted rgb(88, 88, 44);
+    margin-left: -10rem;
 
 }
 
@@ -162,7 +178,7 @@ html {
     background-size: cover;
     background-clip: content-box;
     border: .5rem dotted rgb(88, 88, 44);
-
+    margin-right: -10rem
 }
 
 .circle {
@@ -183,11 +199,22 @@ html {
     position: absolute;
     overflow: hidden;
     border-radius: 50%;
+    transition: width .2s, height .2s;
+}
+
+
+
+.main-circle:hover {
+    width: 75rem;
+    height: 75rem;
 }
 
 .main-circle img {
     mix-blend-mode: luminosity;
     position: relative;
+    transition: left 2s, top 2s;
+    top: 0;
+    left: 0;
     transition: left 2s, top 2s;
 }
 
@@ -209,5 +236,91 @@ html {
 .featured-text-2 {
     margin: 0 10rem 0 auto;
 }
+
+/* Main Button */
+.main-btn {
+    position: absolute;
+    bottom: 3rem;
+    width: 13rem;
+    height: 13rem;
+    background-color: rgb(58, 58, 58);
+    border-radius: 50%;
+    border: 0.2rem dotted white;
+    padding: 0.1rem;
+    overflow: hidden;
+
+}
+
+.main-btn-content {
+    width: 100%;
+    height: 100%;
+    border: .2rem dotted rgb(71, 65, 52);
+    border-radius: 50%;
+    transform: rotate(40deg);
+    transition: transform .2s, border .2s;
+}
+
+.main-btn:hover .main-btn-content {
+    transform: rotate(60deg);
+    border: 0.2rem dotted rgb(104, 103, 102);
+    transition: transform .2s .5s, border .2s;
+}
+
+.main-btn-line {
+    position: absolute;
+    top: 4rem;
+    width: 3rem;
+    height: 0.5rem;
+    border: 0.1rem solid white;
+}
+
+.main-btn-line:nth-child(1) {
+    transform: rotateZ(-45deg) translateX(-.65rem);
+    transform-origin: left center;
+    border-right: none;
+}
+
+.main-btn-line:nth-child(2) {
+    transform: rotateZ(45deg) translateX(.65rem);
+    transform-origin: right center;
+    border-left: none;
+}
+
+.main-btn-line:nth-child(3) {
+    transform: rotateZ(90deg) translateX(0.5rem);
+}
+
+.main-btn span {
+    position: absolute;
+    bottom: 3rem;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.ripple {
+    position: absolute;
+    width: 0;
+    height: 0;
+    background-color: #575756;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: rippleAnim 0.5s forwards;
+}
+
+@keyframes rippleAnim {
+    0% {
+        width: 0;
+        height: 0;
+    }
+
+    100% {
+        width: 210%;
+        height: 210%;
+    }
+}
+
+/* End of Main Button */
 
 /* End of Section 1 */
