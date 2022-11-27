@@ -758,6 +758,25 @@ html {
     color: white;
 }
 
+/* Form Validation */
+.message {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #9a7c4e;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    margin: 0 auto 1rem 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.error.message {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* End of form validation */
 /* Ending of Form */
 /* Slideshow */
 .slideshow {
