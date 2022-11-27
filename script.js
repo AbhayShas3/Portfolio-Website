@@ -75,7 +75,12 @@ mainBtns.forEach(btn => {
         ripple.style.top = `${top}px`
         btn.prepend(ripple);
 
+
     })
+
+
+    })
+
 
     btn.addEventListener("mouseleave", () => {
         btn.removeChild(ripple);
@@ -254,6 +259,7 @@ setInterval(() => {
 
 }, 3000)
 //End of Sideshow
+
 // Form Validation
 const form = document.querySelector('.contact-form');
 const username = document.getElementById('name');
@@ -309,4 +315,6 @@ form.addEventListener("submit", (e) => {
 })
 
 // End of Form Validation
+
+
 // End of Section 5
