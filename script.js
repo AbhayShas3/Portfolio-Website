@@ -84,9 +84,39 @@ mainBtns.forEach(btn => {
 
 
 //End of Main Button
+
+// Navigation
+const menuIcon = document.querySelector(".menu-icon");
+const navbar = document.querySelector(".navbar");
+
+const scrollFn = () => {
+    menuIcon.classList.add("show-menu-icon");
+    navbar.classList.add("hide-navbar");
+
+    if (window.scrollY === 0) {
+        menuIcon.classList.remove("show-menu-icon");
+        navbar.classList.remove("hide-navbar");
+    }
+
+    progressBarFn();
+};
+
+document.addEventListener("scroll", scrollFn);
+
+menuIcon.addEventListener("click", () => {
+    menuIcon.classList.remove("show-menu-icon");
+    navbar.classList.remove("hide-navbar");
+});
+
+// End of Navigation
+
+
+
+
+
 //About me text
 const aboutMeText = document.querySelector(".about-me-text")
-const aboutMeTextContent = "I am a Software Developer currently working as a Machine Learning Engineer at Saaragh Technologies,a Machine Learning Startup. I was previously a Software Developer Intern at Intel Corporation. I am constantly willing to learn and understand new technologies";
+const aboutMeTextContent = "I am a Software Developer currently working as a Machine Learning Engineer at Saaragh ,a Machine Learning based Startup.I am constantly willing to learn and understand new technologies";
 Array.from(aboutMeTextContent).forEach((char) => {
 
     const span = document.createElement("span");
@@ -113,15 +143,115 @@ projects.forEach(project => {
         project.firstElementChild.style.top = "2rem";
 
     })
-})
 
-//Github link for projects
-project.addEventListener('click', () => {
-    //const imgWrapper = document.createElement('div');
+
+    //Github link for projects
+    //project.addEventListener('click', () => {
+    //window.open("https://www.google.com", "_blank");
     //imgWrapper.className = "project-img-wrapper";
     //container.appendChild(imgWrapper)
-    console.log("clicked");
-    window.open("www.google.com", "_blank");
+    //console.log("clicked"); document.createElement('div');
+    //window.open("www.google.com", "_blank");
+    // });
+})
+
+const project1 = document.querySelector(".proj1");
+project1.addEventListener('click', () => {
+    window.open("https://github.com/MajorProjectGroup69/Music-Recommendation-System-using-Deep-Learning-for-Therapy");
+})
+
+const project2 = document.querySelector(".proj2");
+project2.addEventListener('click', () => {
+    window.open("https://github.com/AbhayShas3/Ethereum_Ecomm_Website");
+})
+
+const project3 = document.querySelector(".proj3");
+project3.addEventListener('click', () => {
+    window.open("https://github.com/AbhayShas3/Lung-Cancer-Detection");
+})
+
+const project4 = document.querySelector(".proj4");
+project4.addEventListener('click', () => {
+    window.open("https://github.com/AbhayShas3/Food-Devlivery-Website");
+})
+
+const project5 = document.querySelector(".proj5");
+project5.addEventListener('click', () => {
+    window.open("https://github.com/AbhayShas3/C-Editor");
+})
+
+const project6 = document.querySelector(".proj6");
+project6.addEventListener('click', () => {
+    window.open("https://github.com/AbhayShas3/Lexical-Analyzer");
 })
 //End of github link for projects
 //End of Projects
+
+// Section 4
+document.querySelectorAll(".service-btn").forEach((service) => {
+    service.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        const serviceText = service.nextElementSibling;
+        serviceText.classList.toggle("change");
+
+        const rightPosition = serviceText.classList.contains("change")
+            ? `calc(100% - ${getComputedStyle(service.firstElementChild).width})`
+            : 0;
+
+        service.firstElementChild.style.right = rightPosition;
+    });
+});
+// End of Section 4
+// Section 5
+// Form
+const formHeading = document.querySelector('.form-heading');
+const formInputs = document.querySelectorAll('.contact-form-input');
+
+formInputs.forEach(input => {
+    input.addEventListener('focus', () => {
+        formHeading.style.opacity = "0";
+        setTimeout(() => {
+            formHeading.textContent = `Your ${input.placeholder}`;
+            formHeading.style.opacity = "1"
+        }, 300);
+
+
+    })
+    input.addEventListener('blur', () => {
+        formHeading.style.opacity = "0";
+        setTimeout(() => {
+            formHeading.textContent = `Let's Talk`;
+            formHeading.style.opacity = "1"
+        }, 300);
+
+
+    })
+})
+// End of Form
+// Slideshow
+const slideshow = document.querySelector('.slideshow');
+setInterval(() => {
+    const firstIcon = slideshow.firstElementChild;
+    firstIcon.classList.add("faded-out");
+    const thirdIcon = slideshow.children[3];
+    thirdIcon.classList.add("light");
+    thirdIcon.previousElementSibling.classList.remove("light");
+    setTimeout(() => {
+        slideshow.removeChild(firstIcon);
+
+        slideshow.appendChild(firstIcon);
+
+        setTimeout(() => {
+
+            firstIcon.classList.remove("faded-out");
+
+
+        }, 500);
+
+
+    }, 500);
+
+}, 3000)
+//End of Sideshow
+// End of Section 5
