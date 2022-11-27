@@ -189,6 +189,70 @@ html {
 }
 
 /* End of Page bg */
+/* Navigation */
+/* Menu icons */
+.menu-icon {
+    position: fixed;
+    top: 0;
+    right: 6rem;
+    width: 12rem;
+    height: 7rem;
+    /* background-color: red; */
+    flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 100;
+    cursor: pointer;
+    transition: opacity .2s;
+}
+
+.menu-icon-line {
+    width: 4rem;
+    height: 0.1rem;
+    background-color: white;
+    margin: 0.5rem 0;
+    box-shadow: 0 0.3rem 0.5rem black;
+}
+
+.show-menu-icon {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* End of Menu Icons */
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 2.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 3rem;
+    z-index: 100;
+    transition: opacity .5s, visibility .5s, transform .5s;
+
+    /* opacity: 0;
+    visibility: hidden; */
+}
+
+.navbar-link {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: white;
+    margin: 0 2.5rem;
+
+    text-shadow: 0.3rem 0.5rem black;
+}
+
+.hide-navbar {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(10rem);
+}
+
+/* End of Navbar */
+/* End of navigation */
 /* Section 1 */
 .section-1 {
     position: relative;
@@ -494,6 +558,9 @@ html {
     padding-bottom: 15rem;
 }
 
+.wrapper {
+    font-size: 0rem;
+}
 
 .project {
     width: 40rem;
@@ -567,5 +634,392 @@ html {
     }
 }
 
+/* Projects Button */
+.projects-btn {
+    left: 50%;
+    transform: translate(-50%);
+}
+
+/* End of Projects Button */
 /* End of Projects */
 /* End of Section 3 */
+
+/* Section 4 */
+.section-4 {
+    position: relative;
+    width: 100%;
+}
+
+/* Work ex */
+.services-wrapper {
+    width: 100%;
+    flex-direction: column;
+}
+
+.service {
+    width: 70%;
+    margin: 2rem 0;
+    border-bottom: .5rem solid rgb(66, 57, 33);
+}
+
+.service-btn {
+    width: 100%;
+    position: relative;
+    display: block;
+    height: 15rem;
+}
+
+.service-btn span {
+    font-family: "Poppins", sans-serif;
+    font-size: 6rem;
+    font-style: italic;
+    font-weight: bold;
+    color: rgb(66, 57, 33);
+    position: absolute;
+    right: 0;
+    transition: right 0.5s;
+
+}
+
+.service-text {
+    font-size: 2.5rem;
+    color: rgb(184, 181, 181);
+    letter-spacing: 0.1rem;
+    height: 0;
+    margin-bottom: hidden;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .2sec;
+
+}
+
+.change.service-text {
+    height: 20rem;
+    visibility: visible;
+    opacity: 1;
+    margin-top: 100px;
+    transition: height 0.5s, opacity 0.5s 0.5s;
+}
+
+/* End of Work ex */
+
+/* End of Section 4 */
+/* Section 5 */
+.section-5 {
+    position: relative;
+    height: 100vh;
+    flex-direction: column;
+    margin-top: 5rem;
+}
+
+/* Form */
+.form-heading {
+    font-family: "Poppins", sans-serif;
+    font-size: 6rem;
+    font-weight: 400;
+    color: rgb(66, 57, 33);
+    letter-spacing: 0.3rem;
+    margin-bottom: 3rem;
+    transition: opacity .3s;
+}
+
+.contact-form {
+    flex-direction: column;
+}
+
+.contact-form-input {
+    width: 60rem;
+    padding: 0.5rem;
+    margin: 1rem 0;
+    background-color: rgba(255, 255, 255, .1);
+    border: .1rem solid rgb(66, 57, 33);
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: white;
+    letter-spacing: .1rem;
+    height: 5rem;
+}
+
+.contact-form-textarea {
+    height: 20rem;
+    resize: none;
+
+
+}
+
+.form-submit-btn {
+    width: 20rem;
+    height: 5rem;
+    background-color: rgb(66, 57, 33);
+    border: none;
+    align-self: flex-start;
+    /* Remove the above lign to center the button */
+    font-size: 1.8rem;
+    color: white;
+}
+
+/* Ending of Form */
+/* Slideshow */
+.slideshow {
+    display: flex;
+    width: 50rem;
+    margin-top: 10rem;
+    padding: 0 2rem;
+}
+
+.slideshow-link {
+    width: 20%;
+    filter: brightness(.5);
+}
+
+.slideshow-link:nth-child(1),
+.slideshow-link:nth-child(5) {
+    transition: width 0.5s, opacity 0.5s;
+}
+
+.slideshow-link:nth-child(3) {
+    transition: filter .5s;
+    transition: filter 1.5s;
+}
+
+.slideshow-link img {
+    width: 100%;
+    padding: 0 1rem;
+}
+
+.faded-out {
+    opacity: 0;
+    width: 0;
+}
+
+.light {
+    filter: brightness(1.5);
+}
+
+/* End of slideshow */
+/* End of Section 5 */
+
+/* Responsive */
+@media(max-width:1500px) {
+    .circle {
+        width: 15rem;
+        height: 15rem;
+    }
+
+    .main-circle {
+        width: 45rem;
+        height: 45rem;
+    }
+
+    .main-circle:hover {
+        width: 55rem;
+        height: 55rem;
+    }
+
+    .main-circle img {
+        width: 160%;
+        height: 160%;
+    }
+
+    .about-me-text span {
+        font-size: 8rem;
+    }
+
+    .section-4 {
+        margin-bottom: 10rem;
+    }
+
+
+}
+
+@media(max-width:1499px) {
+    .wrapper {
+        font-size: 2rem;
+    }
+}
+
+@media(max-width:1350px) {
+    .main-btn {
+        width: 12.5rem;
+        height: 12.5rem;
+    }
+
+    .circle {
+        display: none;
+    }
+
+    .service-btn span {
+        font-size: 5rem;
+    }
+}
+
+@media(max-width:1150px) {
+    html {
+        font-size: 55%;
+    }
+
+    .mouse-circle,
+    .mouse-dot {
+        display: none;
+    }
+
+    .navbar-link {
+        margin: 0 1.5rem;
+    }
+
+    .main-circle {
+        width: 40rem;
+        height: 40rem;
+    }
+
+    .main-circle:hover {
+        width: 45rem;
+        height: 45rem;
+    }
+
+    .about-me-text span {
+        font-size: 5.5rem;
+    }
+
+    .service-btn {
+        height: 12rem;
+    }
+
+    .service-btn span {
+        font-size: 3rem;
+    }
+
+    .service-text {
+        font-size: 1.9rem;
+    }
+
+    .slideshow {
+        margin: 5rem 0;
+    }
+}
+
+@media(max-width:900px) {
+    .menu-icon {
+        right: -1rem;
+    }
+
+    .navbar-link {
+        font-size: 1.5rem;
+        margin: 0 1rem;
+    }
+
+    .featured-text-1 {
+        margin: 0 auto 0 5rem;
+
+    }
+
+    .featured-text-2 {
+        margin: 0 5rem 0 auto;
+
+    }
+
+    .section-2-heading {
+        left: 5rem;
+    }
+
+    .about-me-text span {
+        font-size: 4.5rem;
+        color: rgb(157, 154, 154);
+    }
+
+    .service-btn {
+        height: 9rem;
+    }
+
+
+}
+
+@media(max-width:700px) {
+
+    html {
+        font-size: 50%;
+    }
+
+    .contact-form-input {
+        width: 50rem;
+    }
+
+    .wrapper {
+        font-size: 2rem;
+    }
+
+
+}
+
+@media(max-width:550px) {
+    html {
+        font-size: 40%;
+    }
+
+    .main-circle img {
+        width: 180%;
+        height: 180%;
+    }
+
+    .service-btn span {
+        height: 3.75rem;
+    }
+
+    .service-text {
+        color: #bbb;
+    }
+
+    .slideshow {
+        width: 45rem;
+    }
+
+    .slideshow-link img {
+        padding: 0 1.1rem;
+    }
+
+    .wrapper {
+        font-size: 2rem;
+    }
+}
+
+@media(max-width:412px) {
+    html {
+        font-size: 35%;
+    }
+
+    .logo {
+        font-size: 1.7rem;
+        top: 13rem;
+        left: 50%;
+        transform: translateX(-50%)
+    }
+
+    .navbar {
+        justify-content: center;
+        padding: 0;
+    }
+
+    .main-circle {
+        width: 38rem;
+    }
+
+    .main-circle:hover {
+        width: 42rem;
+    }
+
+    .main-circle img {
+        width: 200%;
+        height: 200%;
+    }
+
+    .section-2-heading span {
+        font-size: 1rem;
+        font-weight: 200;
+    }
+
+    .wrapper {
+        font-size: 1rem;
+    }
+}
+
+/* End of Responsive */
