@@ -300,12 +300,17 @@ const checkEmail = (input) => {
 }
 
 form.addEventListener("submit", (e) => {
-    e.preventDefault();
+    //e.preventDefault();
     checkLength(username, 4)
     checkLength(subject, 4)
     checkLength(message, 15)
     checkEmail(email);
     checkRequiredFields([username, email, subject, message]);
+    const notValid = Array.from(messages).find((message) => {
+        return message.classList.contains("error");
+    });
+    notValid && e.preventDefault();
+
 })
 
 // End of Form Validation
