@@ -75,7 +75,12 @@ mainBtns.forEach(btn => {
         ripple.style.top = `${top}px`
         btn.prepend(ripple);
 
+
     })
+
+
+    })
+
 
     btn.addEventListener("mouseleave", () => {
         btn.removeChild(ripple);
@@ -254,4 +259,62 @@ setInterval(() => {
 
 }, 3000)
 //End of Sideshow
+
+// Form Validation
+const form = document.querySelector('.contact-form');
+const username = document.getElementById('name');
+const subject = document.getElementById('subject');
+const email = document.getElementById('email');
+const message = document.getElementById('message');
+const messages = document.querySelectorAll(".message");
+
+const error = (input, message) => {
+    input.nextElementSibling.classList.add("error");
+    input.nextElementSibling.textContent = message;
+}
+
+const success = (input) => {
+    input.nextElementSibling.classList.remove("error")
+}
+
+const checkRequiredFields = (inputArr) => {
+    inputArr.forEach(input => {
+        if (input.value.trim() === "") {
+            error(input, `${input.id} is required`);
+        }
+    })
+};
+
+const checkLength = (input, min) => {
+    if (input.value.trim().length < min) {
+        error(input, `${input.id} must be atleast ${min} characters long`)
+    } else {
+        success(input);
+    }
+}
+
+const checkEmail = (input) => {
+    const regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    if (regex.test(input.value.trim())) {
+        success(input)
+    } else {
+        error(input, "Email is not valid");
+    }
+
+
+}
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    checkLength(username, 4)
+    checkLength(subject, 4)
+    checkLength(message, 15)
+    checkEmail(email);
+    checkRequiredFields([username, email, subject, message]);
+})
+
+// End of Form Validation
+
+
 // End of Section 5
